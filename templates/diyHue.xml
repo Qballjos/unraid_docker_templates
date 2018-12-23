@@ -13,7 +13,7 @@
     <Registry>https://hub.docker.com/r/diyhue/core</Registry>
     <GitHub>https://github.com/diyhue/diyHue</GitHub>
     <Project>https://diyhue.github.io</Project>
-    <Repository>diyHue</Repository>
+    <Repository>diyhue/core</Repository>
     <Network>host</Network>
     <Networking>
         <Mode>host</Mode>
