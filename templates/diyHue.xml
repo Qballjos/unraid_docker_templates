@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Container version="2">
+    <Privileged>false</Privileged>
+    <Beta>False</Beta>
+    <Category>Network:Web</Category>
+    <Name>diyHue</Name>
+    <Description>
+    The open-source alternative to building and controlling your own Hue-like bulbs, strips, lights, and devices!
+    </Description>
+    <Overview>
+    The open-source alternative to building and controlling your own Hue-like bulbs, strips, lights, and devices!
+    </Overview>
+    <Registry>https://hub.docker.com/r/diyhue/core</Registry>
+    <GitHub>https://github.com/diyhue/diyHue</GitHub>
+    <Project>https://diyhue.github.io</Project>
+    <Repository>diyHue</Repository>
+    <Network>host</Network>
+    <Networking>
+        <Mode>host</Mode>
+    </Networking>
+    <Data>
+        <Volume>
+            <HostDir>/mnt/user/appdata/diyHue/export/</HostDir>
+            <ContainerDir>/opt/hue-emulator/export/</ContainerDir>
+            <Mode>rw</Mode>
+        </Volume>
+    </Data>
+</Container>
