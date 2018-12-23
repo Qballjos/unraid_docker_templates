@@ -13,16 +13,56 @@
     <Registry>https://hub.docker.com/r/diyhue/core</Registry>
     <GitHub>https://github.com/diyhue/diyHue</GitHub>
     <Project>https://diyhue.github.io</Project>
-    <Repository>diyhue/core</Repository>
-    <Network>host</Network>
+    <Repository>diyHue</Repository>
     <Networking>
-        <Mode>host</Mode>
-    </Networking>
-    <Data>
-        <Volume>
-            <HostDir>/mnt/user/appdata/diyHue/export/</HostDir>
-            <ContainerDir>/opt/hue-emulator/export/</ContainerDir>
-            <Mode>rw</Mode>
-        </Volume>
-    </Data>
+    <Mode>bridge</Mode>
+    <Publish>
+      <Port>
+        <HostPort>880</HostPort>
+        <ContainerPort>80</ContainerPort>
+        <Protocol>tcp</Protocol>
+      </Port>
+      <Port>
+        <HostPort>843</HostPort>
+        <ContainerPort>443</ContainerPort>
+        <Protocol>tcp</Protocol>
+      </Port>
+      <Port>
+        <HostPort>1900</HostPort>
+        <ContainerPort>1900</ContainerPort>
+        <Protocol>udp</Protocol>
+      </Port>
+      <Port>
+        <HostPort>2100</HostPort>
+        <ContainerPort>2100</ContainerPort>
+        <Protocol>udp</Protocol>
+      </Port>
+    </Publish>
+  </Networking>
+  <Data>
+    <Volume>
+      <HostDir>/mnt/user/appdata/diyHue/export</HostDir>
+      <ContainerDir>/opt/hue-emulator/export/</ContainerDir>
+      <Mode>rw</Mode>
+    </Volume>
+  </Data>
+  <WebUI>http://[IP]:[PORT:880]/</WebUI>
+  <Icon>https://raw.githubusercontent.com/qballjos/unraid_docker_templates/master/images/diyHue.png</Icon>
+
+  <Network Default="bridge">bridge</Network>
+
+  <Config Type="Port" Name="Web Interface Port" Target="80" Default="880" Mode="tcp" Display="always-hide" Required="true"
+       Description="This is Sync's Web UI port you can access via a web browser on HTTP.">880</Config>
+    
+  <Config Type="Port" Name="Web Interface Port" Target="443" Default="843" Mode="tcp" Display="always-hide" Required="true"
+       Description="This is Sync's Web UI port you can access via a web browser on HTTPS.">843</Config>
+
+  <Config Type="Port" Name="TCP Data Transfer Port" Target="1900" Default="1900" Mode="tcp" Display="advanced-hide" Required="true"
+       Description="This is Sync's TCP port for data transfers.">1900</Config>
+
+  <Config Type="Port" Name="UDP Data Transfer Port" Target="2100" Default="2100" Mode="udp" Display="advanced-hide" Required="true"
+       Description="This is Sync's UDP port for data transfers.">2100</Config>
+
+  <Config Type="Path" Name="Config Storage Path" Target="/opt/hue-emulator/export/" Default="/mnt/user/appdata/diyHue/export" Mode="rw" Display="advanced-hide" Required="true"
+       Description="This is where diyHue will export its configuration.">/mnt/user/appdata/diyHue/export</Config>
 </Container>
