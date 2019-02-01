@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Containers>
+  <TemplateURL>https://raw.githubusercontent.com/binhex/docker-templates/master/binhex/jackett.xml</TemplateURL>
+  <Beta>False</Beta>
+  <Category>Productivity:Image Hosting</Category>
+  <Name>Chevereto</Name>
+  <Description>
+    Chevereto is a powerful and fast image hosting script that allows you to create your very own full featured image hosting website in just minutes.[br]
+Please note that this offers only the free Chevereto version.[br][br]
+    [b][u][span style='color: #E80000;']Configuration[/span][/u][/b][br]
+    [b]chevereto_images:/var/www/html/images[/b] is where the images will be stored if you wish to add a data volume for this to never loose your images you can do so.
+  </Description>
+  <Support>https://chevereto.com/community/</Support>
+  <Registry>https://hub.docker.com/r/nmtan/chevereto/</Registry>
+  <GitHub>https://github.com/Chevereto/Chevereto-Free</GitHub>
+  <Repository>nmtan/chevereto</Repository>
+  <Project>https://chevereto.com</Project>
+  <BindTime>true</BindTime>
+  <Privileged>false</Privileged>
+  <Networking>
+    <Mode>bridge</Mode>
+    <Publish>
+      <Port>
+        <HostPort>8880</HostPort>
+        <ContainerPort>80</ContainerPort>
+        <Protocol>tcp</Protocol>
+      </Port>
+    </Publish>
+  </Networking>
+  <Environment>
+    <Variable>
+      <Name>UMASK</Name>
+      <Value>000</Value>
+    </Variable>
+    <Variable>
+      <Name>PUID</Name>
+      <Value>99</Value>
+    </Variable>
+    <Variable>
+      <Name>PGID</Name>
+      <Value>100</Value>
+    </Variable>
+    <Variable>
+      <Name>CHEVERETO_DB_HOST</Name>
+      <Value>db<Value>
+    </Variable>
+    <Variable>
+      <Name>CHEVERETO_DB_USERNAME</Name>
+      <Value>chevereto<Value>
+    </Variable>
+    <Variable>
+      <Name>CHEVERETO_DB_PASSWORD</Name>
+      <Value>chevereto<Value>
+    </Variable>
+    <Variable>
+      <Name>CHEVERETO_DB_NAME</Name>
+      <Value>chevereto<Value>
+    </Variable>
+        <Variable>
+      <Name>CHEVERETO_DB_PREFIX</Name>
+      <Value>chv_<Value>
+    </Variable>
+  </Environment>
+  <Data>
+    <Volume>
+      <HostDir>/your/photo/storage/location</HostDir>
+      <ContainerDir>/var/www/html/images</ContainerDir>
+      <Mode>rw</Mode>
+    </Volume>
+  </Data>
+  <WebUI>http://[IP]:[PORT:8880]/</WebUI>
+  <ExtraParams></ExtraParams>
+</Containers>
