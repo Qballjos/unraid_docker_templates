@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Containers>
+  <TemplateURL>https://raw.githubusercontent.com/Qballjos/unraid_docker_templates/master/templates/HomeAssistant.xml</TemplateURL>
+  <Beta>False</Beta>
+  <Category>Productivity:Home Automation</Category>
+  <Name>home-assistant</Name>
+  <Description>
+    Home Assistant is a home automation platform running on Python 3. It is able to track and control all devices at home and offer a platform for automating control..[br][br]
+    [b][u][span style='color: #E80000;']Configuration[/span][/u][/b][br]
+    [b]PATH_TO_YOUR_CONFIG:/config[/b] is where the config will be stored on your server.[br]
+  </Description>
+  <Support>https://www.home-assistant.io/help/</Support>
+  <Registry>https://hub.docker.com/r/homeassistant/home-assistant/</Registry>
+  <GitHub>https://github.com/home-assistant/home-assistante</GitHub>
+  <Repository>homeassistant/home-assistant</Repository>
+  <Project>https://www.home-assistant.io/</Project>
+  <BindTime>true</BindTime>
+  <Privileged>true</Privileged>
+  <Networking>
+    <Mode>host</Mode>
+  </Networking>
+  <Data>
+    <Volume>
+      <HostDir>/mnt/user/appdata/homeassistant</HostDir>
+      <ContainerDir>/config</ContainerDir>
+      <Mode>rw</Mode>
+    </Volume>
+  </Data>
+  <WebUI>http://[IP]:[PORT:8123]/</WebUI>
+  <ExtraParams></ExtraParams>
+  <Icon>https://raw.githubusercontent.com/qballjos/unraid_docker_templates/master/images/HomeAssistant.png</Icon>
+</Containers>
