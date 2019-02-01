@@ -8,7 +8,8 @@
     Chevereto is a powerful and fast image hosting script that allows you to create your very own full featured image hosting website in just minutes.[br]
 Please note that this offers only the free Chevereto version.[br][br]
     [b][u][span style='color: #E80000;']Configuration[/span][/u][/b][br]
-    [b]chevereto_images:/var/www/html/images[/b] is where the images will be stored if you wish to add a data volume for this to never loose your images you can do so.
+    [b]chevereto_images:/var/www/html/images[/b] is where the images will be stored if you wish to add a data volume for this to never loose your images you can do so.[br]
+      [b]You need to have a database running and change the settings accordingly[/b]
   </Description>
   <Support>https://chevereto.com/community/</Support>
   <Registry>https://hub.docker.com/r/nmtan/chevereto/</Registry>
@@ -29,18 +30,25 @@ Please note that this offers only the free Chevereto version.[br][br]
   </Networking>
   <Environment>
     <Variable>
-      <Name>UMASK</Name>
-      <Value>000</Value>
+      <Name>CHEVERETO_DB_HOST</Name>
+      <Value>db</Value>
     </Variable>
     <Variable>
-      <Name>PUID</Name>
-      <Value>99</Value>
+      <Name>CHEVERETO_DB_USERNAME</Name>
+      <Value>chevereto</Value>
     </Variable>
     <Variable>
-      <Name>PGID</Name>
-      <Value>100</Value>
+      <Name>CHEVERETO_DB_PASSWORD</Name>
+      <Value>chevereto</Value>
     </Variable>
-    
+    <Variable>
+      <Name>CHEVERETO_DB_NAME</Name>
+      <Value>chevereto</Value>
+    </Variable>
+    <Variable>
+      <Name>CHEVERETO_DB_PREFIX</Name>
+      <Value>chv_</Value>
+    </Variable>
   </Environment>
   <Data>
     <Volume>
