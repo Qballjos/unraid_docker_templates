@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Containers>
-  <TemplateURL>https://raw.githubusercontent.com/Qballjos/unraid_docker_templates/master/templates/ghost.xml</TemplateURL>
+  <TemplateURL>https://raw.githubusercontent.com/Qballjos/unraid_docker_templates/master/templates/Chevereto.xml</TemplateURL>
   <Beta>False</Beta>
   <Category>Productivity:Image Hosting</Category>
   <Name>Chevereto</Name>
