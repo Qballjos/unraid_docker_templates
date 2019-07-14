@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Containers>
+  <TemplateURL>https://raw.githubusercontent.com/Qballjos/unraid_docker_templates/master/templates/FlexTV.xml</TemplateURL>
+  <Beta>False</Beta>
+  <Category>Productivity:Image Hosting</Category>
+  <Name>FlexTV</Name>
+  <Description>
+    A super-sexy voice interface for the Plex HTPC
+  </Description>
+  <Support>https://github.com/d8ahazard/FlexTV</Support>
+  <Registry>https://cloud.docker.com/repository/docker/digitalhigh/flextv</Registry>
+  <GitHub>https://github.com/d8ahazard/FlexTV</GitHub>
+  <Repository>digitalhigh/flextv</Repository>
+  <Project>https://app.phlexchat.com/</Project>
+  <BindTime>true</BindTime>
+  <Privileged>false</Privileged>
+  <Networking>
+    <Mode>bridge</Mode>
+    <Publish>
+      <Port>
+        <HostPort>8063</HostPort>
+        <ContainerPort>80</ContainerPort>
+        <Protocol>tcp</Protocol>
+      </Port>
+    </Publish>
+  </Networking>
+  <Environment>    
+  </Environment>
+  <Data>
+    <Volume>
+      <HostDir>/your/photo/storage/location</HostDir>
+      <ContainerDir>/var/www/html/images</ContainerDir>
+      <Mode>rw</Mode>
+    </Volume>
+  </Data>
+  <WebUI>http://[IP]:[PORT:8063]/</WebUI>
+  <ExtraParams></ExtraParams>
+  <Icon>https://raw.githubusercontent.com/qballjos/unraid_docker_templates/master/images/FlexTV.png</Icon>
+</Containers>
