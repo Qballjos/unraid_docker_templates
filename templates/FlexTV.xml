@@ -28,8 +28,8 @@
   </Environment>
   <Data>
     <Volume>
-      <HostDir>/your/photo/storage/location</HostDir>
-      <ContainerDir>/var/www/html/images</ContainerDir>
+      <HostDir>/config</HostDir>
+      <ContainerDir>/mnt/cache/appdata/FlexTV</ContainerDir>
       <Mode>rw</Mode>
     </Volume>
   </Data>
