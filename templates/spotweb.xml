@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Containers>
+  <TemplateURL>https://raw.githubusercontent.com/Qballjos/unraid_docker_templates/master/templates/spotweb.xml</TemplateURL>
+  <Beta>False</Beta>
+  <Category>Productivity:Indexing service</Category>
+  <Name>Spotweb</Name>
+  <Description>
+    Spotweb is a decentralized usenet community based on the Spotnet protocol.[br][br]
+    [b][u][span style='color: #E80000;']Configuration[/span][/u][/b][br]
+    [b]Spotweb is configured as an open system after running docker-compose up, so everyone who can access can register an account (keep this in mind)[/b]
+    [b]If you want to use the Spotweb API, create a new user and use the API key associated with that user[/b]
+    [b]If you would like to save nzb files to disk for (e.g.) SABnzbd to be picked up, configure docker-compose.yml to mount e.g. /nzb to some directory where nzb's need to be saved, and configure Spotweb to save NZB's to this directory on disk[/b][br]
+	[b]Login with username admin and password spotweb[/b]
+ </Description>
+  <Support>https://github.com/edv/docker-spotweb</Support>
+  <Registry>https://hub.docker.com/r/erikdevries/spotweb/</Registry>
+  <GitHub>https://github.com/edv/docker-spotweb</GitHub>
+  <Repository>erikdevries/spotweb</Repository>
+  <Project>https://github.com/edv/docker-spotweb</Project>
+  <BindTime>true</BindTime>
+  <Privileged>false</Privileged>
+  <Networking>
+    <Mode>bridge</Mode>
+    <Publish>
+      <Port>
+        <HostPort>880</HostPort>
+        <ContainerPort>80</ContainerPort>
+        <Protocol>tcp</Protocol>
+      </Port>
+    </Publish>
+  </Networking>
+  <Environment>
+    <Variable>
+      <Name>DB_ENGINE</Name>
+      <Value>pdo_mysql</Value>
+    </Variable>
+    <Variable>
+      <Name>DB_HOST</Name>
+      <Value>mysql</Value>
+    </Variable>
+    <Variable>
+      <Name>DB_PORT</Name>
+      <Value>3306</Value>
+    </Variable>
+    <Variable>
+      <Name>DB_NAME</Name>
+      <Value>spotweb</Value>
+    </Variable>
+    <Variable>
+      <Name>DB_USER</Name>
+      <Value>spotweb</Value>
+    </Variable>
+    <Variable>
+      <Name>DB_PASS</Name>
+      <Value>spotweb</Value>
+    </Variable>
+  </Environment>
+  <Data>
+    <Volume>
+      <HostDir>/your/nzb/storage/location</HostDir>
+      <ContainerDir>/nzb</ContainerDir>
+      <Mode>rw</Mode>
+    </Volume>
+  </Data>
+  <WebUI>http://[IP]:[PORT:880]/</WebUI>
+  <ExtraParams></ExtraParams>
+  <Icon>https://raw.githubusercontent.com/qballjos/unraid_docker_templates/master/images/spotweb.png</Icon>
+</Containers>
