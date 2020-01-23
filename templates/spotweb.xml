@@ -57,7 +57,7 @@
   </Environment>
   <Data>
     <Volume>
-      <HostDir>/mnt/usr/appdata/spotweb</HostDir>
+      <HostDir>/mnt/user/appdata/spotweb</HostDir>
       <ContainerDir>/app</ContainerDir>
       <Mode>rw</Mode>
     </Volume>
