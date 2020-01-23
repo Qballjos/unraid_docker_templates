@@ -57,8 +57,8 @@
   </Environment>
   <Data>
     <Volume>
-      <HostDir>/your/nzb/storage/location</HostDir>
-      <ContainerDir>/nzb</ContainerDir>
+      <HostDir>/mnt/usr/appdata/spotweb</HostDir>
+      <ContainerDir>/app</ContainerDir>
       <Mode>rw</Mode>
     </Volume>
   </Data>
