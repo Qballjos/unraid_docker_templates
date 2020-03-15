@@ -87,4 +87,4 @@
     <WebUI>http://[IP]:[PORT:880]/</WebUI>
   <ExtraParams></ExtraParams>
   <Icon>https://raw.githubusercontent.com/qballjos/unraid_docker_templates/master/images/Filerun.png</Icon>
-</Containers>
+</Container>
