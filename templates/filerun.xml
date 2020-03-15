@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<Container version="2">
+<Containers>
+  <TemplateURL>https://raw.githubusercontent.com/Qballjos/unraid_docker_templates/master/templates/filerun.xml</TemplateURL>
     <Privileged>false</Privileged>
     <Beta>False</Beta>
     <Category>Network:Web</Category>
@@ -87,4 +88,4 @@
     <WebUI>http://[IP]:[PORT:880]/</WebUI>
   <ExtraParams></ExtraParams>
   <Icon>https://raw.githubusercontent.com/qballjos/unraid_docker_templates/master/images/Filerun.png</Icon>
-</Container>
+</Containers>
