@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Container version="2">
+    <Privileged>false</Privileged>
+    <Beta>False</Beta>
+    <Category>Production:Coding</Category>
+    <Name>coder</Name>
+    <Description>
+    Code on your Chromebook, tablet, and laptop with a consistent dev environment. Develop on a Linux machine and pick up from any device with a web browser.
+    </Description>
+    <Overview>
+    Take advantage of large cloud servers to speed up tests, compilations, downloads, and more. Preserve battery life when you're on the go since all intensive tasks runs on your server. Make use of a spare computer you have lying around and turn it into a full development environment.
+    </Overview>
+    <Registry>https://hub.docker.com/r/codercom/code-server</Registry>
+    <GitHub>https://github.com/cdr/code-server</GitHub>
+    <Project>https://github.com/cdr/code-server/blob/v3.6.2/doc/guide.md</Project>
+    <Repository>coder</Repository>
+    <Network>bridge</Network>
+    <Networking>
+        <Mode>bridge</Mode>
+        <Publish>
+            <Port>
+                <HostPort>5443</HostPort>
+                <ContainerPort>8080</ContainerPort>
+                <Protocol>tcp</Protocol>
+            </Port>
+        </Publish>
+    </Networking>
+    <Data>
+        <Volume>
+            <HostDir>/mnt/user/appdata/coder</HostDir>
+            <ContainerDir>/config</ContainerDir>
+            <Mode>rw</Mode>
+        </Volume>
+        <Volume>
+            <HostDir>/mnt/user/....</HostDir>
+            <ContainerDir>/home/coder/project</ContainerDir>
+            <Mode>rw</Mode>
+        </Volume>
+    </Data>
+   <WebUI>http://[IP]:[PORT:5443]/</WebUI>
+    <Icon>https://raw.githubusercontent.com/qballjos/unraid_docker_templates/master/images/coder.png</Icon>
+</Container>
