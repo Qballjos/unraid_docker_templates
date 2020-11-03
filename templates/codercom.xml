@@ -13,7 +13,7 @@
     <Registry>https://hub.docker.com/r/codercom/code-server</Registry>
     <GitHub>https://github.com/cdr/code-server</GitHub>
     <Project>https://github.com/cdr/code-server/blob/v3.6.2/doc/guide.md</Project>
-    <Repository>coder</Repository>
+    <Repository>codercom/code-server</Repository>
     <Network>bridge</Network>
     <Networking>
         <Mode>bridge</Mode>
