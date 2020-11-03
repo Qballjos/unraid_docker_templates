@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<Container version="2">
+<Containers>
     <Privileged>false</Privileged>
     <Beta>False</Beta>
     <Category>Production:Coding</Category>
@@ -25,6 +25,7 @@
             </Port>
         </Publish>
     </Networking>
+    <Environment></Environment>
     <Data>
         <Volume>
             <HostDir>/mnt/user/appdata/coder</HostDir>
@@ -37,6 +38,7 @@
             <Mode>rw</Mode>
         </Volume>
     </Data>
-   <WebUI>http://[IP]:[PORT:5443]/</WebUI>
+    <WebUI>http://[IP]:[PORT:5443]/</WebUI>
     <Icon>https://raw.githubusercontent.com/qballjos/unraid_docker_templates/master/images/coder.png</Icon>
-</Container>
+    <ExtraParams></ExtraParams>
+</Containers>
