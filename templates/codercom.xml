@@ -25,16 +25,27 @@
             </Port>
         </Publish>
     </Networking>
-    <Environment></Environment>
+    <Environment>
+        <Variable>
+            <Value></Value>
+            <Name>PASSWORD</Name>
+            <Mode/>
+        </Variable>
+        <Variable>
+            <Value></Value>
+            <Name>SUDO_PASSWORD</Name>
+            <Mode/>
+        </Variable>
+    </Environment>
     <Data>
         <Volume>
             <HostDir>/mnt/user/appdata/coder</HostDir>
-            <ContainerDir>/config</ContainerDir>
+            <ContainerDir>~/.config/code-server/</ContainerDir>
             <Mode>rw</Mode>
         </Volume>
         <Volume>
             <HostDir>/mnt/user/....</HostDir>
-            <ContainerDir>/home/coder/project</ContainerDir>
+            <ContainerDir>~/.local/share/code-server</ContainerDir>
             <Mode>rw</Mode>
         </Volume>
     </Data>
