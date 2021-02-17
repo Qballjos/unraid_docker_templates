@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Containers>
+  <TemplateURL>https://raw.githubusercontent.com/Qballjos/unraid_docker_templates/master/templates/Wordpress.xml</TemplateURL>
+  <Beta>False</Beta>
+  <Category>Productivity:Webhosting</Category>
+  <Name>Wordpress</Name>
+  <Description>
+    WordPress behoort tot de meest populaire content management systemen en wordt gebruikt voor zeer uiteenlopende webprojecten. Bekijk welke functies WordPress aan welke doelgroepen biedt, zodat je zelf kunt beoordelen of het CMS WordPress ook voor jouw blog, bedrijfswebsite of forum het meest geschikte CMS is.[br][br]
+    [b][u][span style='color: #E80000;']Configuration[/span][/u][/b][br]
+    [b]Wordpress data folder:/var/www/html[/b] is where the data will be stored.[br]
+      [b]You need to have a database running and change the settings accordingly[/b]
+  </Description>
+  <Support>https://wordpress.com/nl/support/</Support>
+  <Registry>https://hub.docker.com/_/wordpress/</Registry>
+  <GitHub>https://github.com/WordPress/WordPress</GitHub>
+  <Repository>wordpress</Repository>
+  <Project>https://wordpress.com</Project>
+  <BindTime>true</BindTime>
+  <Privileged>false</Privileged>
+  <Networking>
+    <Mode>bridge</Mode>
+    <Publish>
+      <Port>
+        <HostPort>8080</HostPort>
+        <ContainerPort>80</ContainerPort>
+        <Protocol>tcp</Protocol>
+      </Port>
+    </Publish>
+  </Networking>
+  <Environment>
+    <Variable>
+      <Name>WORDPRESS_DB_HOST</Name>
+      <Value>ip:port</Value>
+    </Variable>
+    <Variable>
+      <Name>WORDPRESS_DB_USER</Name>
+      <Value>db username</Value>
+    </Variable>
+    <Variable>
+      <Name>WORDPRESS_DB_PASSWORD</Name>
+      <Value>db password</Value>
+    </Variable>
+    <Variable>
+      <Name>WORDPRESS_DB_NAME</Name>
+      <Value>db name</Value>
+    </Variable>
+    <Variable>
+      <Name>WORDPRESS_TABLE_PREFIX</Name>
+      <Value>wp_</Value>
+    </Variable>
+  </Environment>
+  <Data>
+    <Volume>
+      <HostDir>/mnt/user/appdata/wordpress</HostDir>
+      <ContainerDir/var/www/html</ContainerDir>
+      <Mode>rw</Mode>
+    </Volume>
+  </Data>
+  <WebUI>http://[IP]:[PORT:8080]/</WebUI>
+  <ExtraParams></ExtraParams>
+  <Icon>https://raw.githubusercontent.com/qballjos/unraid_docker_templates/master/images/Wordpress.png</Icon>
+</Containers>
